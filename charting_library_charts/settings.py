@@ -8,20 +8,22 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['*']
 
 ADMINS = (
-	# ('Your Name', 'your_email@example.com'),
+	 ('Ryland', 'rylandmathews1@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME': os.getenv('DB_NAME', 'charting_library'),
-		'USER': os.getenv('DB_USER', 'postgres'),
-		'PASSWORD': os.getenv('DB_PASSWORD', 'postgres'),
-		'HOST': os.getenv('DB_HOST', 'localhost'),
-		'PORT': int(os.getenv('DB_PORT', '5432')),
-	}
+    'default': {
+        "ENGINE": 'djongo',
+        "CLIENT": {
+           "name": 'chartSettings',
+           "host": 'mongodb+srv://ryland:Chester53@syndicate-uofbw.mongodb.net/chartSettings?retryWrites=true&w=majority',
+           "username": 'ryland',
+           "password": 'Chester53',
+           "authMechanism": "SCRAM-SHA-1",
+        }, 
+    }
 }
 
 
